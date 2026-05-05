@@ -1,4 +1,4 @@
-﻿public class Mixin implements MixinProvides{
+public class Mixin implements MixinProvides{
 
     private MixinRequires mixinRequires;
 
@@ -15,7 +15,7 @@
 
     @Override
     public String print() {
-        StringBuilder buf = new StringBuilder("[");
+        StringBuilder buf = new StringBuilder("[ ");
         for (var i = 0; i < mixinRequires.length(); i++) {
             buf.append(mixinRequires.get(i));
             buf.append(" ");

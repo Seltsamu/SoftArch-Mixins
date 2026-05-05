@@ -1,10 +1,12 @@
-﻿
+
 public class ArraySequence implements MixinRequires{
 
     int[] data;
+    int last;
 
-    public ArraySequence(int[] data) {
-        this.data = data;
+    public ArraySequence(int size) {
+        this.data = new int[size];
+        last = 0;
     }
 
     public ArraySequence() {
@@ -17,15 +19,17 @@ public class ArraySequence implements MixinRequires{
 
     @Override
     public int length() {
-        return 0;
+        return last;
     }
 
     @Override
     public void swap(int i, int j) {
-
+        var tmp = this.data[i];
+        this.data[i] = this.data[j];
+        this.data[j] = tmp;
     }
 
     public void add(int j) {
-        this.data[last++] = j;
+        data[last++] = j;
     }
 }
